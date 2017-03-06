@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Transactions . History</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Transaction History</h3>
+ <ion-list>
+    <div ion-item *ngFor="let item of items">
+      <div item item-divider>
+        {{item.cat}}
+      </div>
+      <div ion-item *ngFor="let el of item.els">
+        {{el}}
+      </div>
+    </div>
+  </ion-list>
+</ion-content>
