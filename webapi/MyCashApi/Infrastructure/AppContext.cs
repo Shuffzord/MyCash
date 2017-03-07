@@ -8,7 +8,7 @@ namespace MyCashApi.Infrastructure
         public Ctx(DbContextOptions<Ctx> options)
             : base(options)
         {
-            
+
         }
 
         public DbSet<Transaction> Transactions { get; set; }
