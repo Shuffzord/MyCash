@@ -9,18 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TransactionHistoryProvider } from '../../providers/transaction-history-provider';
 var TypeScriptTest = (function () {
-    function TypeScriptTest(navCtrl) {
+    function TypeScriptTest(navCtrl, transactionHistoryProvider) {
         this.navCtrl = navCtrl;
+        this.transactionHistoryProvider = transactionHistoryProvider;
+        this.people = [];
+        this.loadPeople();
     }
+    TypeScriptTest.prototype.loadPeople = function () {
+        var _this = this;
+        this.transactionHistoryProvider.load()
+            .then(function (data) {
+            _this.people = data;
+        });
+    };
     return TypeScriptTest;
 }());
 TypeScriptTest = __decorate([
     Component({
         selector: 'TypeScriptTest',
-        templateUrl: 'TypeScriptTest.html'
+        templateUrl: 'TypeScriptTest.html',
+        providers: [TransactionHistoryProvider]
     }),
-    __metadata("design:paramtypes", [NavController])
+    __metadata("design:paramtypes", [NavController, TransactionHistoryProvider])
 ], TypeScriptTest);
 export { TypeScriptTest };
 //# sourceMappingURL=TypeScriptTest.js.map

@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="home">
-  <ion-list>
+  <div>
     <ion-item *ngFor="let person of people">
       <ion-avatar item-left>
         <img src="{{person.picture.thumbnail}}">
@@ -16,5 +16,5 @@
       <h2>{{person.name.first}} {{person.name.last}}</h2>
       <p>{{person.email}}</p>
     </ion-item>
-  </ion-list>
+  </div>
 </ion-content>

@@ -9,33 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TransactionHistoryProvider } from '../../../providers/transaction-history-provider';
-var Hist = (function () {
-    function Hist(navCtrl, transactionHistoryProvider) {
+var Page1 = (function () {
+    function Page1(navCtrl) {
         this.navCtrl = navCtrl;
-        this.transactionHistoryProvider = transactionHistoryProvider;
-        this.items = [];
-        this.people = [];
-        this.testVal = "";
-        this.items.push({
-            cat: "Category1",
-            els: [1, 2, 3, 4],
-        });
-        this.items.push({
-            cat: "Category2",
-            els: [4, 3, 2, 1],
-        });
-        this.testVal = "Testowa wartosc";
     }
-    return Hist;
+    return Page1;
 }());
-Hist = __decorate([
+Page1 = __decorate([
     Component({
-        selector: 'hist',
-        templateUrl: 'hist.html',
-        providers: [TransactionHistoryProvider]
+        selector: 'page-page1',
+        templateUrl: 'page1.html'
     }),
-    __metadata("design:paramtypes", [NavController, TransactionHistoryProvider])
-], Hist);
-export { Hist };
-//# sourceMappingURL=hist.js.map
+    __metadata("design:paramtypes", [NavController])
+], Page1);
+export { Page1 };
+//# sourceMappingURL=page1.js.map
