@@ -7,16 +7,27 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!--<ion-content padding>
   <h3>Transaction History</h3>
- <ion-list>
-    <div ion-item *ngFor="let item of items">
+  <ion-list>
+    <div ion-item *ngFor="let item of people">
       <div item item-divider>
-        {{item.cat}}
+        {{item.name.first}}
       </div>
       <div ion-item *ngFor="let el of item.els">
         {{el}}
       </div>
     </div>
+  </ion-list>
+</ion-content>-->
+<ion-content class="home">
+  <ion-list>
+    <ion-item *ngFor="let person of people">
+      <ion-avatar item-left>
+        <img src="{{person.picture.thumbnail}}">
+      </ion-avatar>
+      <h2>{{person.name.first}} {{person.name.last}}</h2>
+      <p>{{person.email}}</p>
+    </ion-item>
   </ion-list>
 </ion-content>

@@ -2,15 +2,21 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
+import { TransactionHistoryProvider } from '../../../providers/transaction-history-provider';
+
 @Component({
   selector: 'hist',
-  templateUrl: 'hist.html'
+  templateUrl: 'hist.html',
+  providers: [TransactionHistoryProvider]
 })
 export class Hist {
   items = [];
+  people = [];
   testVal: string = "";
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public transactionHistoryProvider: TransactionHistoryProvider) {
+
+
     this.items.push({
       cat: "Category1",
       els: [1, 2, 3, 4],
@@ -22,7 +28,5 @@ export class Hist {
       });
 
     this.testVal = "Testowa wartosc";
-
   }
-
 }
