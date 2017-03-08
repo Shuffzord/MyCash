@@ -5,11 +5,11 @@ using MyCashApi.Entities;
 
 namespace MyCashApi.Infrastructure.Repositories
 {
-    public abstract class BaseRepository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : BaseEntity
 
     {
         private readonly Ctx _ctx;
-        public BaseRepository(Ctx ctx)
+        public Repository(Ctx ctx)
         {
             _ctx = ctx;
         }
@@ -29,7 +29,7 @@ namespace MyCashApi.Infrastructure.Repositories
             return _ctx.Set<T>().Single(x => x.Id == key);
         }
 
-        IEnumerable<T> IRepository<T>.GetAll()
+        public IEnumerable<T> GetAll()
         {
            return _ctx.Set<T>();
         }

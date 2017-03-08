@@ -1,16 +1,26 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using MyCashApi.Entities;
+using MyCashApi.Infrastructure;
 
 namespace MyCashApi.Controllers
 {
     [Route("api/[controller]")]
     public class TransactionHistoryController : Controller
     {
+        private readonly IRepository<Transaction> transactionRepository;
+
+        public TransactionHistoryController(IRepository<Transaction> transactionRepository)
+        {
+            this.transactionRepository = transactionRepository;
+
+        }
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Transaction> Get()
         {
-            return new string[] { "value1", "value2" };
+            return this.transactionRepository.GetAll().ToArray();
         }
 
         // GET api/values/5

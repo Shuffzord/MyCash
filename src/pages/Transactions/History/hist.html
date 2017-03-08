@@ -12,11 +12,11 @@
   <ion-list>
     <div ion-item *ngFor="let item of items">
       <div item item-divider>
-        {{item.cat}}
+        {{item.category}} - {{item.value}}
       </div>
-      <div ion-item *ngFor="let el of item.els">
+      <!--<div ion-item *ngFor="let el of item.els">
         {{el}}
-      </div>
+      </div>-->
     </div>
   </ion-list>
 </ion-content>

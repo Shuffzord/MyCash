@@ -32,7 +32,7 @@ var TransactionHistoryProvider = (function () {
             // We're using Angular HTTP provider to request the data,
             // then on the response, it'll map the JSON data to a parsed JS object.
             // Next, we process the data and resolve the promise with the new data.
-            _this.http.get('https://randomuser.me/api/?results=10')
+            _this.http.get('http://localhost:8100/api/TransactionHistory/')
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 _this.data = data.results;

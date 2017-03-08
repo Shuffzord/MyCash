@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyCashApi.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using MyCashApi.Infrastructure.Repositories;
+using MyCashApi.Entities;
 
 namespace MyCashApi
 {
@@ -27,9 +29,14 @@ namespace MyCashApi
         {
             // Add framework services.
             services.AddMvc();
-            
-            services.AddDbContext<Ctx>(o => 
+
+            services.AddDbContext<Ctx>(o =>
                 o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+
+            services.AddCors(b => b.AddPolicy("AllowSpecificOrigin", x => x.WithOrigins("http://localhost:8100")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,7 +44,8 @@ namespace MyCashApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            
+            app.UseCors("AllowSpecificOrigin");
             app.UseMvc();
             DbInitializer.Initialize(context);
         }

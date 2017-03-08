@@ -15,18 +15,17 @@ var Hist = (function () {
         this.navCtrl = navCtrl;
         this.transactionHistoryProvider = transactionHistoryProvider;
         this.items = [];
-        this.people = [];
         this.testVal = "";
-        this.items.push({
-            cat: "Category1",
-            els: [1, 2, 3, 4],
-        });
-        this.items.push({
-            cat: "Category2",
-            els: [4, 3, 2, 1],
-        });
         this.testVal = "Testowa wartosc";
+        this.loadHistory();
     }
+    Hist.prototype.loadHistory = function () {
+        var _this = this;
+        this.transactionHistoryProvider.load()
+            .then(function (data) {
+            _this.items = data;
+        });
+    };
     return Hist;
 }());
 Hist = __decorate([
