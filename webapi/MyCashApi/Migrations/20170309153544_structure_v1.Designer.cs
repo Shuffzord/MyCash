@@ -9,9 +9,10 @@ using MyCashApi.Entities;
 namespace MyCashApi.Migrations
 {
     [DbContext(typeof(Ctx))]
-    partial class CtxModelSnapshot : ModelSnapshot
+    [Migration("20170309153544_structure_v1")]
+    partial class structure_v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
