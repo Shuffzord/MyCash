@@ -3,8 +3,9 @@
   public class Transaction : BaseEntity
   {
     public float Value { get; set; }
-    public Category Category { get; set; }
+    public virtual SubCategory SubCategory { get; set; }
     public Account Account { get; set; }
     public TransactionType TransactionType { get; set; }
+    public string Description { get; set; }
   }
 }

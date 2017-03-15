@@ -1,51 +1,52 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyCashApi.Entities;
 using MyCashApi.Infrastructure;
 
 namespace MyCashApi.Controllers
 {
-    [Route("api/[controller]")]
-    public class TransactionHistoryController : Controller
+  [Route("api/[controller]")]
+  public class TransactionHistoryController : Controller
+  {
+    private readonly IRepository<Transaction> _transactionRepository;
+
+    public TransactionHistoryController(IRepository<Transaction> transactionRepository)
     {
-        private readonly IRepository<Transaction> transactionRepository;
+      this._transactionRepository = transactionRepository;
 
-        public TransactionHistoryController(IRepository<Transaction> transactionRepository)
-        {
-            this.transactionRepository = transactionRepository;
-
-        }
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<Transaction> Get()
-        {
-            return this.transactionRepository.GetAll().ToArray();
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
+    // GET api/values
+    [HttpGet]
+    public IEnumerable<Transaction> Get()
+    {
+      return _transactionRepository.GetAll().Include(x => x.SubCategory).ToList();
+    }
+
+    // GET api/values/5
+    [HttpGet("{id}")]
+    public string Get(int id)
+    {
+      return "value";
+    }
+
+    // POST api/values
+    [HttpPost]
+    public void Post([FromBody]string value)
+    {
+    }
+
+    // PUT api/values/5
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody]string value)
+    {
+    }
+
+    // DELETE api/values/5
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+    }
+  }
 }
