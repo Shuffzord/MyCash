@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-var Page1 = (function () {
-    function Page1(navCtrl) {
+import { TransactionProvider } from '../../../providers/transaction-provider';
+var Main = (function () {
+    function Main(navCtrl) {
         this.navCtrl = navCtrl;
+        this.items = [];
+        this.testVal = "";
     }
-    return Page1;
+    return Main;
 }());
-Page1 = __decorate([
+Main = __decorate([
     Component({
-        selector: 'page-page1',
-        templateUrl: 'page1.html'
+        selector: 'main',
+        templateUrl: 'main.html',
+        providers: [TransactionProvider]
     }),
     __metadata("design:paramtypes", [NavController])
-], Page1);
-export { Page1 };
-//# sourceMappingURL=page1.js.map
+], Main);
+export { Main };
+//# sourceMappingURL=main.js.map

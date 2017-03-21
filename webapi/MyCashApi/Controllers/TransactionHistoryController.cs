@@ -26,27 +26,30 @@ namespace MyCashApi.Controllers
 
     // GET api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Transaction Get(long id)
     {
-      return "value";
+      return _transactionRepository.Find(id);
     }
 
     // POST api/values
     [HttpPost]
-    public void Post([FromBody]string value)
+    public void Post([FromBody]Transaction item)
     {
+      _transactionRepository.Add(item);
     }
 
     // PUT api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody]string value)
+    public void Put([FromBody]Transaction item)
     {
+      _transactionRepository.Update(item);
     }
 
     // DELETE api/values/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public void Delete(long id)
     {
+      _transactionRepository.Remove(_transactionRepository.Find(id));
     }
   }
 }

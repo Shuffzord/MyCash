@@ -3,19 +3,20 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the TransactionHistoryProvider provider.
+  Generated class for the TransactionProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class TransactionHistoryProvider {
+export class TransactionProvider {
   data;
 
   constructor(public http: Http) {
-    console.log('Hello TransactionHistoryProvider Provider');
+    console.log('Hello TransactionProvider Provider');
   }
-  load() {
+
+  history() {
     if (this.data) {
       // already loaded data
       return Promise.resolve(this.data);

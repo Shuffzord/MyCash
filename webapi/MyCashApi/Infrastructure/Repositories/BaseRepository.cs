@@ -41,5 +41,10 @@ namespace MyCashApi.Infrastructure.Repositories
     {
       entities.Remove(entity);
     }
+
+      public void Update(T entity)
+      {
+          entities.Update(entity);
+      }
   }
 }

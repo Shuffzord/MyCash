@@ -1,11 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
 import { TypeScriptTest} from '../pages/TypeScriptTest/TypeScriptTest'
 import { Hist } from '../pages/Transactions/History/hist';
+import { Main } from '../pages/Transactions/main';
 
 
 @Component({
@@ -14,7 +12,7 @@ import { Hist } from '../pages/Transactions/History/hist';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Hist;
+  rootPage: any = Main;
 
   pages: Array<{title: string, component: any}>;
 
@@ -23,10 +21,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 },
       { title: 'TypeScriptTest', component: TypeScriptTest },
-      { title: 'History', component: Hist }
+      { title: 'History', component: Hist },
+      { title: 'Main', component: Main }
     ];
 
   }

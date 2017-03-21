@@ -11,17 +11,17 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 /*
-  Generated class for the TransactionHistoryProvider provider.
+  Generated class for the TransactionProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-var TransactionHistoryProvider = (function () {
-    function TransactionHistoryProvider(http) {
+var TransactionProvider = (function () {
+    function TransactionProvider(http) {
         this.http = http;
-        console.log('Hello TransactionHistoryProvider Provider');
+        console.log('Hello TransactionProvider Provider');
     }
-    TransactionHistoryProvider.prototype.load = function () {
+    TransactionProvider.prototype.history = function () {
         var _this = this;
         if (this.data) {
             // already loaded data
@@ -40,11 +40,11 @@ var TransactionHistoryProvider = (function () {
             });
         });
     };
-    return TransactionHistoryProvider;
+    return TransactionProvider;
 }());
-TransactionHistoryProvider = __decorate([
+TransactionProvider = __decorate([
     Injectable(),
     __metadata("design:paramtypes", [Http])
-], TransactionHistoryProvider);
-export { TransactionHistoryProvider };
-//# sourceMappingURL=transaction-history-provider.js.map
+], TransactionProvider);
+export { TransactionProvider };
+//# sourceMappingURL=transaction-provider.js.map
