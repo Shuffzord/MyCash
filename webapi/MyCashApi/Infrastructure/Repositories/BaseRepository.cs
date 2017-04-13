@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using MyCashApi.Entities;
 
@@ -35,6 +36,10 @@ namespace MyCashApi.Infrastructure.Repositories
 
     public virtual IQueryable<T> GetAll()
     {
+      if (entities is IQueryable<SoftDeleteEntity>)
+      {
+        return entities.Where((x => !(x as SoftDeleteEntity).IsDeleted));
+      }
       return entities;
     }
     public void Remove(T entity)
@@ -42,9 +47,15 @@ namespace MyCashApi.Infrastructure.Repositories
       entities.Remove(entity);
     }
 
-      public void Update(T entity)
-      {
-          entities.Update(entity);
-      }
+    public void Update(T entity)
+    {
+      entities.Update(entity);
+    }
+
+    public T Find(Expression<Func<T, bool>> expression)
+    {
+      return entities.SingleOrDefault(expression);
+    }
+
   }
 }

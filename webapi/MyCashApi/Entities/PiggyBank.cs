@@ -13,22 +13,21 @@ namespace MyCashApi.Entities
             StartDate = DateTime.Now;
         }
 
-        public string Name { get; set; }
+        public Category Type { get; set; }
 
-        public DateTime Deadline { get; set; }
+        public string Name { get; set; }
+    
         public DateTime StartDate { get; set; }
 
         public float DefaultPeriodValue { get; set; }
+
+        public float CalculatedPeriodValue { get; set; }  
 
         public Interval ExpectedIncomeInterval { get; set; }
 
         public List<Transaction> Transactions { get; set; }
 
-        public float TargetAmmount { get; set; }
-
-        public float Average
-        {
-            get { return Transactions.Sum(x => x.Value) / 12; }
-        }
+        public Goal Goal { get; set; }
+    
     }
 }
