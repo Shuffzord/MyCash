@@ -1,4 +1,6 @@
-﻿namespace MyCashApi.Entities
+﻿using MyCashApi.Enums;
+
+namespace MyCashApi.Entities
 {
   public class BudgetEntry : BaseEntity {
 
@@ -9,5 +11,7 @@
     public float ActualValue { get; set; }
     public float Result { get; set; }
     public string Comment { get; set; }
+
+      public BudgetEntryType BudgetEntryType { get; set; }
   }
 }

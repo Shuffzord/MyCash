@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MyCashApiTest\**" />
+    <Content Remove="MyCashApiTest\**" />
+    <EmbeddedResource Remove="MyCashApiTest\**" />
+    <None Remove="MyCashApiTest\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
   
