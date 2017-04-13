@@ -32,3 +32,7 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+/webapi/MyCashApiTest/obj
+/webapi/MyCashApiTest/obj
+
+webapi/MyCashApiTest/bin/Debug/
