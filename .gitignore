@@ -36,3 +36,7 @@ UserInterfaceState.xcuserstate
 /webapi/MyCashApiTest/obj
 
 webapi/MyCashApiTest/bin/Debug/
+
+webapi/TestRunner/bin/
+
+webapi/TestRunner/obj/
