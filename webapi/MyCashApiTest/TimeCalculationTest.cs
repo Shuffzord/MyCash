@@ -26,6 +26,20 @@ namespace MyCashApiTest
           Interval = Interval.Monthly,
           ExpectedResult = 2
       }
+      ,new TestData
+      {
+          StartDate= new DateTime(2017,1,8),
+          EndDate= new DateTime(2018,3,13),
+          Interval = Interval.Yearly,
+          ExpectedResult = 1
+      }
+      ,new TestData
+      {
+          StartDate= new DateTime(2017,1,8),
+          EndDate= new DateTime(2018,2,13),
+          Interval = Interval.Monthly,
+          ExpectedResult = 13
+      },
     };
 
     [Test]
