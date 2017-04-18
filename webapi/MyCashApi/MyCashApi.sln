@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCashApi", "MyCashApi.csproj", "{DBEF9D92-94E7-48DC-962C-236D8E87F951}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCashApiTest", "..\MyCashApiTest\MyCashApiTest.csproj", "{4764CB5F-7FAC-4CB6-AA4F-C4BE29C37C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "..\TestRunner\TestRunner.csproj", "{011B6B0A-33AF-47CF-8152-6A0143A80A56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{4764CB5F-7FAC-4CB6-AA4F-C4BE29C37C00}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4764CB5F-7FAC-4CB6-AA4F-C4BE29C37C00}.Release|x64.ActiveCfg = Release|x64
 		{4764CB5F-7FAC-4CB6-AA4F-C4BE29C37C00}.Release|x64.Build.0 = Release|x64
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Debug|x64.Build.0 = Debug|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Release|x64.ActiveCfg = Release|Any CPU
+		{011B6B0A-33AF-47CF-8152-6A0143A80A56}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

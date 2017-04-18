@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="MyCashApiTest.dll" fullname="C:/Workspace/ionicTest/MyCash/webapi/TestRunner/bin/Debug/netcoreapp1.1/MyCashApiTest.dll" testcasecount="1" result="Passed" start-time="2017-04-18 13:56:25Z" end-time="2017-04-18 13:56:25Z" duration="0.028272" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1" random-seed="1356268979">
+  <filter />
+  <test-suite type="Assembly" id="1003" name="MyCashApiTest.dll" fullname="C:/Workspace/ionicTest/MyCash/webapi/TestRunner/bin/Debug/netcoreapp1.1/MyCashApiTest.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-04-18 13:56:25Z" end-time="2017-04-18 13:56:25Z" duration="0.028272" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+    <environment framework-version="3.6.1.0" clr-version=".NET Core 4.6.25009.03" os-version="Microsoft Windows 6.1.7601 S" cwd="C:\Workspace\ionicTest\MyCash\webapi\TestRunner" machine-name="H48662" culture="pl-PL" uiculture="en-US" os-architecture="X64" />
+    <settings>
+      <setting name="WorkDirectory" value="C:\Workspace\ionicTest\MyCash\webapi\TestRunner" />
+    </settings>
+    <test-suite type="TestSuite" id="1004" name="MyCashApiTest" fullname="MyCashApiTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-04-18 13:56:25Z" end-time="2017-04-18 13:56:25Z" duration="0.022115" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+      <test-suite type="TestFixture" id="1000" name="TimeCalculationTest" fullname="MyCashApiTest.TimeCalculationTest" classname="MyCashApiTest.TimeCalculationTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-04-18 13:56:25Z" end-time="2017-04-18 13:56:25Z" duration="0.020575" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+        <test-suite type="ParameterizedMethod" id="1002" name="DateDifferenceFromNowTest" fullname="MyCashApiTest.TimeCalculationTest.DateDifferenceFromNowTest" classname="MyCashApiTest.TimeCalculationTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-04-18 13:56:25Z" end-time="2017-04-18 13:56:25Z" duration="0.018726" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+          <test-case id="1001" name="DateDifferenceFromNowTest(MyCashApiTest.TimeCalculationTest+TestData)" fullname="MyCashApiTest.TimeCalculationTest.DateDifferenceFromNowTest(MyCashApiTest.TimeCalculationTest+TestData)" methodname="DateDifferenceFromNowTest" classname="MyCashApiTest.TimeCalculationTest" runstate="Runnable" seed="1774070885" result="Passed" start-time="2017-04-18 13:56:25Z" end-time="2017-04-18 13:56:25Z" duration="0.012225" asserts="1" />
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

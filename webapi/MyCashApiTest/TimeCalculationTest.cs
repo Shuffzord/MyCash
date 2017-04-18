@@ -28,10 +28,10 @@ namespace MyCashApiTest
       }
     };
 
-    [TestCase()]
+    [Test]
     public void DateDifferenceFromNowTest([ValueSource("_testData")]TestData calculationTestData)
     {
-      Assert.AreSame(calculationTestData.ExpectedResult, TimeCalculationService.DateDifferenceFrom(calculationTestData.StartDate, calculationTestData.Interval, calculationTestData.EndDate));
+      Assert.AreEqual(calculationTestData.ExpectedResult, TimeCalculationService.DateDifferenceFrom(calculationTestData.StartDate, calculationTestData.Interval, calculationTestData.EndDate));
     }
   }
 }
