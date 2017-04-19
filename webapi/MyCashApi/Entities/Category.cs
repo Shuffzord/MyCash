@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using MyCashApi.Interfaces;
 using static System.String;
 
 namespace MyCashApi.Entities
 {
-  public class Category : SoftDeleteEntity
+  public class Category : SoftDeleteEntity, ICashable
   {
     public Category(string name, List<SubCategory> subCategories, string description = "")
     {

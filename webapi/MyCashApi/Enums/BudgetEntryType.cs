@@ -3,6 +3,7 @@
   public enum BudgetEntryType
   {
     Default,
+    SummaryEntry,
     PiggyBank
   }
 }

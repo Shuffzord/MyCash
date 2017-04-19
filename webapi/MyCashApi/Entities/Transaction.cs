@@ -8,7 +8,7 @@ namespace MyCashApi.Entities
     {
       TransactionDate = DateTime.Now;
     }
-
+    public BudgetEntry BusinessEntry { get; set; }
     public float Value { get; set; }
     public virtual SubCategory SubCategory { get; set; }
     public Account Account { get; set; }

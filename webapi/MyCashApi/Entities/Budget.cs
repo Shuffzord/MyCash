@@ -7,11 +7,16 @@ namespace MyCashApi.Entities
 {
   public class Budget : BaseEntity
   {
-    public Budget(List<PiggyBank> piggies, Budget basedOn = null)
+    public Budget(List<PiggyBank> piggies, List<Category> categories, Budget basedOn = null)
     {
       StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
       EndDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
       if (basedOn == null) return;
+
+      foreach (var category in categories)
+      {
+        BudgetEntries.Add(new BudgetEntry());
+      }
 
       foreach (var budgetEntry in basedOn.BudgetEntries.Where(x => x.BudgetEntryType == BudgetEntryType.Default))
       {
@@ -19,13 +24,13 @@ namespace MyCashApi.Entities
         BudgetEntries.Add(budgetEntry);
       }
 
-        foreach (var piggy in piggies)
+      foreach (var piggy in piggies)
+      {
+        BudgetEntries.Add(new BudgetEntry
         {
-            BudgetEntries.Add(new BudgetEntry
-            {
-                ExpectedValue = piggy.DefaultPeriodValue
-            });
-        }
+          ExpectedValue = piggy.DefaultPeriodValue
+        });
+      }
     }
 
     public DateTime StartDate { get; set; }

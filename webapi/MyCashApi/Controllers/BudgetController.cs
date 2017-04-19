@@ -13,13 +13,16 @@ namespace MyCashApi.Controllers
   {
     private readonly IRepository<Budget> _budgetRepository;
     private readonly IRepository<PiggyBank> _piggiesRepository;
+    private readonly IRepository<Category> _categoryRepository;
 
     public BudgetController(
       IRepository<Budget> budgetRepository,
-      IRepository<PiggyBank> piggiesRepository)
+      IRepository<PiggyBank> piggiesRepository,
+      IRepository<Category> categoryRepository)
     {
       _budgetRepository = budgetRepository;
       _piggiesRepository = piggiesRepository;
+      _categoryRepository = categoryRepository;
     }
 
     [HttpGet]
@@ -37,8 +40,8 @@ namespace MyCashApi.Controllers
       {
         var budgetItem = new Budget(
             _piggiesRepository.GetAll().ToList(),
-            _budgetRepository.GetAll().OrderByDescending(x => x.StartDate).FirstOrDefault()
-            );
+            _categoryRepository.GetAll().Include(x => x.SubCategories).ToList(),
+            _budgetRepository.GetAll().OrderByDescending(x => x.StartDate).FirstOrDefault());
         _budgetRepository.Add(budgetItem);
         _budgetRepository.Save();
         return budgetItem;

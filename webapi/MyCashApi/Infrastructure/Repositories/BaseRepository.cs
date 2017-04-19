@@ -11,7 +11,7 @@ namespace MyCashApi.Infrastructure.Repositories
 
   {
     protected readonly Ctx _ctx;
-    private DbSet<T> entities;
+    private readonly DbSet<T> entities;
     public BaseRepository(Ctx ctx)
     {
       _ctx = ctx;

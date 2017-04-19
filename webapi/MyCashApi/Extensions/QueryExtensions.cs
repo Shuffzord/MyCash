@@ -3,9 +3,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
-namespace MyCashApi.Infrastructure
+namespace MyCashApi.Extensions
 {
-  public static class Ext
+  public static class QueryExtensions
   {
     public static IQueryable<T> IncludeMultiple<T>(this IQueryable<T> query, params Expression<Func<T, object>>[] includes) where T : class
     {
